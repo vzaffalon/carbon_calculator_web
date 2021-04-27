@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const ScreenBackground = styled.div`
-  background: #000000;
+  background: #f3eae5;
   display: flex;
-  height: 100%;
-  width: 500px;
+  height: 100vh;
+  width: 100%;
   align-items: center;
   flex-direction: column;
 `;
