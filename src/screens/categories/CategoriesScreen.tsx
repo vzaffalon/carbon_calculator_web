@@ -29,11 +29,12 @@ function CategoriesScreen(){
                         </Card>
                     </div>
                     <div>
-                        <Card title="Total Category Sum" style={{ width: 300, height: "100%", marginLeft: 10 }}>
+                        <Card title="Total Category Emissions" style={{ width: 300, height: "100%", marginLeft: 10 }}>
                                 <div style={{alignItems: "center", justifyContent: "center", display: "flex", height: "350px"}}>
                                     <Col style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
-                                        <Text style={{fontSize: 34}}>10,500</Text>
-                                        <Text style={{fontSize: 24}}>Total(kg CO2e/yr)</Text>
+                                        <Text style={{fontSize: 42, fontWeight: 400}}>Housing</Text>
+                                        <Text style={{fontSize: 30}}>10,500</Text>
+                                        <Text style={{fontSize: 20}}>Annual CO2 emissions (Kg.)</Text>
                                     </Col>
                                 </div>
                         </Card>
@@ -47,27 +48,31 @@ function CategoriesScreen(){
             Content of Tab Pane 3
             </TabPane>
         </Tabs>
-        <div style={{alignItems: "center", justifyContent: "center", width: "100%", display: "flex", marginTop: 10, marginBottom: 20}}>
-            <Card type="inner" title="Total Sum" style={{ width: 1210, height: 200 }}>
-                <Row>
-                    <Col span={3} style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
-                        <Text style={{fontSize: 24}}>10,500</Text>
-                        <Text style={{fontSize: 24}}>Housing</Text>
+        <div style={{alignItems: "center", justifyContent: "center", width: "100%", display: "flex", marginTop: 10, marginBottom: 60}}>
+            <Card type="inner" title="Your Carbon Footprint Annual CO2 emissions (Kg.)" style={{ width: 1210, height: 230 }}>
+                <Row style={{alignItems: "center", justifyContent: "space-between", height: 130}}>
+                    <Col span={4} style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
+                        <Text style={{fontSize: 28}}>Housing</Text>
+                        <Text style={{fontSize: 28}}>10,500</Text>
+                        <Text style={{fontSize: 16}}>U.S. Average*: 10,500</Text>
                     </Col>
 
-                    <Col span={3} style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
-                        <Text style={{fontSize: 24}}>10,590</Text>
-                        <Text style={{fontSize: 24}}>Travel</Text>
+                    <Col span={4} style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
+                        <Text style={{fontSize: 28}}>Travel</Text>
+                        <Text style={{fontSize: 28}}>10,590</Text>
+                        <Text style={{fontSize: 16}}>U.S. Average*: 10,500</Text>
                     </Col>
 
-                    <Col span={3} style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
-                        <Text style={{fontSize: 24}}>10,500</Text>
-                        <Text style={{fontSize: 24}}>Waste</Text>
+                    <Col span={4} style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
+                        <Text style={{fontSize: 28}}>Waste</Text>
+                        <Text style={{fontSize: 28}}>10,500</Text>
+                        <Text style={{fontSize: 16}}>U.S. Average*: 10,500</Text>
                     </Col>
 
-                    <Col span={3} style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
-                        <Text style={{fontSize: 24}}>10,500</Text>
-                        <Text style={{fontSize: 24}}>Total</Text>
+                    <Col span={12} style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
+                        <Text style={{fontSize: 34}}>Total</Text>
+                        <Text style={{fontSize: 34}}>10,500</Text>
+                        <Text style={{fontSize: 24}}>U.S. Average*: 10,500</Text>
                     </Col>
                 </Row>
             </Card>
