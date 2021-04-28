@@ -27,9 +27,11 @@ const SubcategoriesList: React.FC<{category: Category}> = ({category}) => {
           <Card type="inner" title={item.name}>
             <div>
               <Input style={{ marginBottom: 5 }} placeholder="0" />
-              <Text style={{ marginLeft: 40, color: "#8C8C8C" }}>
-                {item.ef_measure}
-              </Text>
+              <div style={{display: "flex", flexDirection: "row-reverse"}}>
+                <Text style={{ color: "#8C8C8C" }}>
+                    {item.ef_measure}
+                </Text>
+              </div>
             </div>
             <div
               style={{
