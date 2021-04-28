@@ -1,4 +1,4 @@
-# loan-web
+# carbon-calculator-web
 
 ### Description
 Carbon footprint Calculator that calculates the yearly total emissions of a person.
