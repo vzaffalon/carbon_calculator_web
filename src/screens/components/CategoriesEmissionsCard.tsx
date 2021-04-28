@@ -37,6 +37,7 @@ const CategoriesEmissionsCard: React.FC<{emission: Emission}> = ({emission}) => 
                 flexDirection: "column",
                 alignItems: "center",
               }}
+              key={category_emission.total_emission}
             >
               <Text style={{ fontSize: 22, color: "#8C8C8C" }}>
                 {category_emission.category.name}
