@@ -4,7 +4,7 @@ import SelectedCategoryEmissions from "./SelectedCategoryEmissions";
 import { Emission } from "../../interfaces/emission/emission.interface"
 import { Category } from "../../interfaces/category/category.interface"
 
-const CategoryEmissionsCard: React.FC<{emission: Emission, category: Category}> = ({emission, category}) => {
+const CategoryEmissionsCard: React.FC<{emission: Emission, category: Category, calculateTotalEmission: Function}> = ({emission, category, calculateTotalEmission}) => {
 
   return (
     <Row style={{ justifyContent: "center" }}>
@@ -13,7 +13,7 @@ const CategoryEmissionsCard: React.FC<{emission: Emission, category: Category}> 
           title={"Insert your current emissions from " + category.name}
           style={{ width: 900 }}
         >
-          <SubcategoriesList category={category}></SubcategoriesList>
+          <SubcategoriesList category={category} calculateTotalEmission={calculateTotalEmission}></SubcategoriesList>
         </Card>
       </div>
       <div>

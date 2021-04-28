@@ -6,7 +6,7 @@ import { Emission } from "../../interfaces/emission/emission.interface";
 import CategoryEmissionsCard from "./CategoryEmissionsCard";
 const { TabPane } = Tabs;
 
-const CategoriesTab: React.FC<{emission: Emission}> = ({emission}) => {
+const CategoriesTab: React.FC<{emission: Emission, calculateTotalEmission: Function}> = ({emission, calculateTotalEmission}) => {
   const [categories, setCategories] = useState<Category[]>([]);
 
   const getCategories = () => {
@@ -29,7 +29,7 @@ const CategoriesTab: React.FC<{emission: Emission}> = ({emission}) => {
     >
       {categories.map((category: Category) => (
         <TabPane tab={category.name} key={category.id}>
-          <CategoryEmissionsCard emission={emission} category={category}></CategoryEmissionsCard>
+          <CategoryEmissionsCard emission={emission} category={category} calculateTotalEmission={calculateTotalEmission}></CategoryEmissionsCard>
         </TabPane>
       ))}
     </Tabs>
