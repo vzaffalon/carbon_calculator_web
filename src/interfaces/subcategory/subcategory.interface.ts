@@ -1,9 +1,10 @@
 export interface BaseSubCategory {
     name: string
-    use: Number
+    use: number
     use_measure: string
-    ef: Number
+    ef: number
     ef_measure: string
+    category_id: number
 }
   
 export interface SubCategory extends BaseSubCategory {
