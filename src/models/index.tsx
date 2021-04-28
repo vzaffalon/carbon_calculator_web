@@ -1,3 +1,3 @@
-export { default as Categories } from "./Categories";
-export { default as Emissions } from "./Emissions";
-export { default as SubCategories } from "./SubCategories";
+export { default as Categories } from "./Category";
+export { default as Emissions } from "./Emission";
+export { default as SubCategories } from "./SubCategory";

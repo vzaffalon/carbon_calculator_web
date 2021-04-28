@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { Typography } from "antd";
 import { Emissions } from "../../models";
 import { Emission } from "../../interfaces/emission/emission.interface";
-const { Title } = Typography;
 import CategoriesTabs from "../components/CategoriesTabs";
 import CategoriesEmissionsCard from "../components/CategoriesEmissionsCard";
+const { Title } = Typography;
 
 function CategoriesScreen() {
-  const [emission, setEmission] = useState<Emission>([] as any);
+  const [emission, setEmission] = useState<Emission>(null as any);
 
   const calculateTotalEmission = () => {
     let params = [
@@ -25,6 +25,7 @@ function CategoriesScreen() {
       },
     ];
     Emissions.calculate_total_emission(params).then((response: any) => {
+        console.log(response)
         setEmission(response.data);
     });
   };
@@ -41,7 +42,7 @@ function CategoriesScreen() {
         Carbon Footprint Calculator
       </Title>
       <CategoriesTabs></CategoriesTabs>
-      <CategoriesEmissionsCard emission={emission}></CategoriesEmissionsCard>
+      {emission && <CategoriesEmissionsCard emission={emission}></CategoriesEmissionsCard>}
     </div>
   );
 }

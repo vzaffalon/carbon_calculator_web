@@ -1,6 +1,6 @@
 import { Card, Typography } from "antd";
-const { Text } = Typography;
 import { Emission } from "../../interfaces/emission/emission.interface";
+const { Text } = Typography;
 
 const TotalEmissionsCard: React.FC<{emission: Emission}> = ({emission}) => {
 

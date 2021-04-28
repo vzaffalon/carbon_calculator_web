@@ -1,6 +1,6 @@
-import api from "./ApiConsts.js";
+import api from "./ApiConsts";
 import axios from "axios";
-import { Categories } from "../interfaces/category/categories.interface.js";
+import { Categories } from "../interfaces/category/categories.interface";
 
 const model_uri = "categories";
 

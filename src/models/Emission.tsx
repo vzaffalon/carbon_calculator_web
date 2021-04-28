@@ -1,7 +1,7 @@
-import api from "./ApiConsts.js";
+import api from "./ApiConsts";
 import axios from "axios";
 import { EmissionsCreation } from "../interfaces/emission/emissions.creation.interface";
-import { Emission } from "../interfaces/emission/emission.interface.js";
+import { Emission } from "../interfaces/emission/emission.interface";
 
 const model_uri = "calculate_total_emission";
 

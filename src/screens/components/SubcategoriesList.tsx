@@ -42,7 +42,7 @@ const SubcategoriesList: React.FC<{category: Category}> = ({category}) => {
               }}
             >
               <Text strong style={{ color: "#ffffff", fontSize: "15px" }}>
-                18 kg CO2e/yr
+                {item.use} {item.use_measure}
               </Text>
             </div>
           </Card>
