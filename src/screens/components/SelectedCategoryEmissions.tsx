@@ -29,7 +29,7 @@ const SelectedCategoryEmissions: React.FC<{
         <Text style={{ fontSize: 22, fontWeight: 400, color: "#8C8C8C" }}>
           {category.name}
         </Text>
-        <Text style={{ fontSize: 30 }}>{category_emission ? category_emission.total_emission : 0}</Text>
+        <Text style={{ fontSize: 30 }}>{category_emission ? category_emission.total_emission.toFixed(2) : 0}</Text>
         <Text style={{ fontSize: 14, color: "#8C8C8C" }}>
           Annual CO2 emissions (Kg.)
         </Text>

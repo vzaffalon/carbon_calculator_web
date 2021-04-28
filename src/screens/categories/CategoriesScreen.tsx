@@ -7,32 +7,38 @@ import CategoriesTabs from "../components/CategoriesTabs";
 import CategoriesEmissionsCard from "../components/CategoriesEmissionsCard";
 import { SubCategory } from "../../interfaces/subcategory/subcategory.interface";
 import { SubCategories } from "../../interfaces/subcategory/subcategories.interface";
+import { ScreenContainer } from "./CategoriesScreenStyled";
 const { Title } = Typography;
 
 function CategoriesScreen() {
   const [emission, setEmission] = useState<Emission>({
     total_emission: 0,
-    total_emission_measure: "string",
+    total_emission_measure: "",
     categories_emissions: [],
   });
+  const [emissionCreations, setEmissionCreations] = useState<EmissionCreation[]>([])
 
   const calculateTotalEmission = (subcategories: SubCategories) => {
-    let params: EmissionCreation[] = [];
+    let emissionsCopy = [...emissionCreations]
     subcategories.map((subcategory: SubCategory) => {
-      params.push({
-        subcategory_id: subcategory.id,
-        use: subcategory.use,
-      });
+      let emissionIndex = emissionsCopy.findIndex((emission) => emission.subcategory_id === subcategory.id)
+      if(emissionIndex != -1){
+        emissionsCopy[emissionIndex].use = subcategory.use 
+      }else{
+        emissionsCopy.push({
+            subcategory_id: subcategory.id,
+            use: subcategory.use,
+        })
+      }
     });
-    Emissions.calculate_total_emission(params).then((response: any) => {
+    setEmissionCreations(emissionsCopy)
+    Emissions.calculate_total_emission(emissionsCopy).then((response: any) => {
       setEmission(response.data);
     });
   };
 
   return (
-    <div
-      style={{ width: "100%", justifyContent: "center", alignItems: "center" }}
-    >
+    <ScreenContainer>
       <Title level={2} style={{ textAlign: "center", marginTop: 30 }}>
         Carbon Footprint Calculator
       </Title>
@@ -45,7 +51,7 @@ function CategoriesScreen() {
       {emission && (
         <CategoriesEmissionsCard emission={emission}></CategoriesEmissionsCard>
       )}
-    </div>
+    </ScreenContainer>
   );
 }
 

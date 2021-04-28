@@ -20,9 +20,9 @@ const TotalEmissionsCard: React.FC<{emission: Emission}> = ({emission}) => {
         }}
       >
         <Text style={{ fontSize: 20, color: "#8C8C8C" }}>Total</Text>
-        <Text style={{ fontSize: 34 }}>{emission.total_emission}</Text>
+        <Text style={{ fontSize: 34 }}>{emission.total_emission.toFixed(2)}</Text>
         <Text style={{ fontSize: 14, color: "#8C8C8C" }}>
-          U.S. Average*: 10,500
+          U.S. Average*: 12,700
         </Text>
       </div>
     </Card>
