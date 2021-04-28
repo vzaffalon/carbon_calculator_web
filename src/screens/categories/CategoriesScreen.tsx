@@ -16,13 +16,13 @@ function CategoriesScreen() {
         use: 50.0,
       },
       {
-        subcategory_id: 1,
-        use: 50.0,
-      },
-      {
         subcategory_id: 7,
         use: 50.0,
       },
+      {
+        subcategory_id: 14,
+        use: 50.0,
+      }
     ];
     Emissions.calculate_total_emission(params).then((response: any) => {
         console.log(response)
@@ -41,7 +41,7 @@ function CategoriesScreen() {
       <Title level={2} style={{ textAlign: "center", marginTop: 30 }}>
         Carbon Footprint Calculator
       </Title>
-      <CategoriesTabs></CategoriesTabs>
+      {emission && <CategoriesTabs emission={emission}></CategoriesTabs>}
       {emission && <CategoriesEmissionsCard emission={emission}></CategoriesEmissionsCard>}
     </div>
   );

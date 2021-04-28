@@ -41,7 +41,7 @@ const CategoriesEmissionsCard: React.FC<{emission: Emission}> = ({emission}) => 
               <Text style={{ fontSize: 22, color: "#8C8C8C" }}>
                 {category_emission.category.name}
               </Text>
-              <Text style={{ fontSize: 28 }}>category_emission.use</Text>
+              <Text style={{ fontSize: 28 }}>{category_emission.total_emission}</Text>
               <Text style={{ fontSize: 12, color: "#8C8C8C" }}>
                 U.S. Average*: 10,500
               </Text>

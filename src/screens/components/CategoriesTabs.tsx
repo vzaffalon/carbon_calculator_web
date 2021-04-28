@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { Tabs } from "antd";
 import { Categories } from "../../models";
 import { Category } from "../../interfaces/category/category.interface";
+import { Emission } from "../../interfaces/emission/emission.interface";
 import CategoryEmissionsCard from "./CategoryEmissionsCard";
 const { TabPane } = Tabs;
 
-function CategoriesTab() {
+const CategoriesTab: React.FC<{emission: Emission}> = ({emission}) => {
   const [categories, setCategories] = useState<Category[]>([]);
 
   const getCategories = () => {
@@ -27,8 +28,8 @@ function CategoriesTab() {
       centered
     >
       {categories.map((category: Category) => (
-        <TabPane tab="Housing" key="1">
-          <CategoryEmissionsCard category={category}></CategoryEmissionsCard>
+        <TabPane tab={category.name} key={category.id}>
+          <CategoryEmissionsCard emission={emission} category={category}></CategoryEmissionsCard>
         </TabPane>
       ))}
     </Tabs>

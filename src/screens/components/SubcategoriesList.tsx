@@ -24,11 +24,11 @@ const SubcategoriesList: React.FC<{category: Category}> = ({category}) => {
       dataSource={subcategories}
       renderItem={(item) => (
         <List.Item>
-          <Card type="inner" title={"Natural gas"}>
+          <Card type="inner" title={item.name}>
             <div>
-              <Input style={{ marginBottom: 5 }} placeholder="10" />
-              <Text style={{ marginLeft: "105px", color: "#8C8C8C" }}>
-                kWh/yr
+              <Input style={{ marginBottom: 5 }} placeholder="0" />
+              <Text style={{ marginLeft: 40, color: "#8C8C8C" }}>
+                {item.ef_measure}
               </Text>
             </div>
             <div
